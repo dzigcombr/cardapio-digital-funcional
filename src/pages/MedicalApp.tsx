@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ChevronLeft, Search, Settings } from 'lucide-react';
 import { DoctorCard } from '@/components/DoctorCard';
@@ -188,9 +187,16 @@ const MedicalApp = () => {
               userName="John"
               userImage="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
               consultations={doctors.map(doc => ({
-                ...doc,
+                id: doc.id,
+                doctorName: doc.name,
+                doctorImage: doc.image,
+                specialty: doc.specialty,
                 time: '2:00 PM',
-                date: '11.05.25'
+                date: '11.05.25',
+                price: doc.price,
+                rating: doc.rating,
+                availableToday: doc.availableToday,
+                timeSlots: doc.timeSlots
               }))}
               onBookAppointment={handleBookAppointment}
             />
