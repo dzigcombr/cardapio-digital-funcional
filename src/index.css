@@ -103,3 +103,43 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* Foodgo is scoped so the medical app keeps its existing theme. */
+.food-app {
+  --background: 0 0% 100%;
+  --foreground: 0 12% 21%;
+  --primary: 355 86% 55%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 95%;
+  --secondary-foreground: 0 0% 42%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 43%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 12% 21%;
+  --border: 0 0% 91%;
+  --input: 0 0% 87%;
+  --ring: 355 86% 55%;
+  --accent: 355 80% 97%;
+  --accent-foreground: 355 86% 45%;
+  --food-canvas: 150 10% 96%;
+  --food-success: 151 48% 35%;
+  --food-success-soft: 151 40% 94%;
+  --food-star: 32 95% 55%;
+  background: hsl(var(--food-canvas));
+  color: hsl(var(--foreground));
+  font-family: 'Trebuchet MS', sans-serif;
+  letter-spacing: 0;
+}
+.food-shell { max-width: 580px; }
+.food-logo { font-family: Georgia, serif; font-style: italic; }
+.food-brand-icon { padding: 14px; border-radius: 50%; color: hsl(var(--primary)); background: hsl(var(--accent)); }
+.food-bottom-nav { width: 100%; max-width: 580px; padding: 8px 10px max(8px, env(safe-area-inset-bottom)); backdrop-filter: blur(12px); }
+.food-product { box-shadow: 0 5px 18px hsl(var(--foreground) / .04); transition: box-shadow .2s, transform .2s; }
+.food-rating { color: hsl(var(--food-star)); }
+.food-vegetarian { color: hsl(var(--food-success)); font-size: 10px; }
+.food-empty-icon, .food-success-icon { width: 76px; height: 76px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+.food-empty-icon { color: hsl(var(--primary)); background: hsl(var(--accent)); }
+.food-success-icon { color: hsl(var(--food-success)); background: hsl(var(--food-success-soft)); }
+.food-demo-note { background: hsl(var(--muted)); color: hsl(var(--muted-foreground)); }
+@media (hover: hover) { .food-product:hover { transform: translateY(-2px); box-shadow: 0 8px 22px hsl(var(--foreground) / .08); } }
+@media (prefers-reduced-motion: reduce) { .food-product { transition: none; } .food-product:hover { transform: none; } }
